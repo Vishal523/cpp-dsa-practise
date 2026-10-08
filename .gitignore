@@ -1,2 +1,11 @@
-/array
+# Ignore compiled mac executables with no extension inside the arrays folder
+arrays/01_smallest_in_array
+arrays/02_largest_in_array
+arrays/03_linear_search
+arrays/04_reverse_an_array
+arrays/05_single_number
+
+# Ignore standard output files
 *.out
+out1.out
+out2.out
