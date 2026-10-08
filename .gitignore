@@ -8,4 +8,4 @@ arrays/05_single_number
 # Ignore standard output files
 *.out
 out1.out
-out2.out
+out2.outarray
