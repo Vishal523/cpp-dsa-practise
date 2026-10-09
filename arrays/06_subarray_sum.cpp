@@ -1,6 +1,6 @@
 // C++ program to print all subarrays of an array
 // Approach : Use 3 nested loops to print all subarrays
-// Time : O(n^3)  Space : O(1)
+//
 
 #include <iostream>
 using namespace std;
