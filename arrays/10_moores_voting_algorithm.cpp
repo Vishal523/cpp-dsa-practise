@@ -2,6 +2,7 @@
 // Approach: Keep a candidate and a count. Matching element: count++.
 //           Different element: count--. When count hits 0, pick a new candidate.
 //           Different elements cancel out, so the majority survives.
+// A second pass verifies the candidate; returns -1 if no majority exists.
 // Time: O(n), Space: O(1)
 // Assumes a majority element always exists.
 
@@ -22,6 +23,21 @@ int majorityElement(vector<int>& nums) {
         freq--;
     }
    }
+
+   // Verification: check that ans really appears more than n/2 times
+    int count = 0;
+    for (int val : nums) {
+        if (val == ans) {
+            count++;
+        }
+    }
+
+    if (count > nums.size() / 2) {
+        return ans;
+    } else {
+        return -1;
+    }
+
    return ans;
 }
 
