@@ -10,3 +10,7 @@ arrays/05_single_number
 out1.out
 out2.outarray
 arrays/06_subarray_sum
+
+# ignore compiled executables (files without an extension) in arrays/
+arrays/*
+!arrays/*.cpp
