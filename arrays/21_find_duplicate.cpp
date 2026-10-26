@@ -38,6 +38,8 @@ int main() {
     vector<int> arr = {1, 3, 4, 2, 2};
     cout << findDuplicate(arr) << endl;     // prints 2
     vector<int> arr2 = {3, 1, 3, 4, 2};
-    cout << findDuplicate(arr2) << endl;    // prints 3n
+    cout << findDuplicate(arr2) << endl; 
+    vector<int> arr2 = {5, 3, 6, 9, 0};
+    cout << findDuplicate(arr2) << endl;    // prints 3
     return 0;
 }
