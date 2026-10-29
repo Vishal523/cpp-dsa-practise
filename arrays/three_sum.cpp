@@ -47,6 +47,7 @@ vector<vector<int>> threeSum(vector<int>& nums) {
 // Explanation: -1 + -1 + 2 = 0 and -1 + 0 + 1 = 0. The two triplets are different.
 int main() {
     vector<int> nums = {-1, 0, 1, 2, -1, -4};
+    vector<int> nums2 = {-2, 0, 2, 4, -2, -8};
     vector<vector<int>> ans = threeSum(nums);
 
     for (auto& t : ans) {
