@@ -13,7 +13,7 @@ int singleNum (vector<int>& nums) {
 }
 
 int main () {
-    vector<int> nums = {2, 7, 7, 8, 8};
+    vector<int> nums = {2, 0, 0, 5, 2};
     cout << "Sinle number in the array = " << singleNum(nums) << endl;
     return 0;
 }
