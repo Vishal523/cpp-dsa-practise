@@ -2,25 +2,23 @@
 #include<vector>
 using namespace std;
 
-int majorityElement(vector<int>& nums) {
-    int freq = 0, ans = 0;
+int maxSubarray(vector<int>& nums) {
+    int currSum = 0, maxSum = INT_MIN;
 
-    for (int i=0; i < nums.size(); i++) {
-        if ( freq == 0 ) {
-            ans = nums[i];
-        }
+    for(int val : nums) {
+        currSum += val;
+        maxSum = max(currSum, maxSum);
 
-        if (ans == nums[i]) {
-            freq++;
-        } else {
-            freq--;
+        if (currSum < 0) {
+            currSum = 0;
         }
     }
-    return ans;
+
+    return maxSum;
 }
 
 int main() {
-    vector<int> nums = {3,1,3,5,3,3,3,3,3,3};
-    cout << "the majority element is = " << majorityElement(nums) << endl;
+    vector<int> nums = {-1,2,3,-3,5,4,6,2,-9};
+    cout << "max subarray sum = " << maxSubarray(nums) << endl;
     return 0;
 }
