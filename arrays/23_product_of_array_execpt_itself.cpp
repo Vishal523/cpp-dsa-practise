@@ -1,3 +1,23 @@
+// Problem: Product of Array Except Self
+// Given nums, return an array ans where ans[i] is the product of all the
+// elements of nums except nums[i]. Division is not allowed.
+// Example: [1,2,3,4] -> [24,12,8,6]
+//
+// Approach: Two passes, using the answer array itself to store the prefix products.
+//   Pass 1 (left to right): ans[i] = product of everything to the LEFT of i.
+//   Pass 2 (right to left): keep one running variable `suffix` holding the
+//           product of everything to the RIGHT of i, and multiply it into ans[i].
+//   After both passes, ans[i] = (left product) * (right product), which is
+//   the product of everything except nums[i].
+//
+// Why not divide: dividing the total product by nums[i] fails when the array
+//   contains a 0 (division by zero, or wrong results).
+//
+// Time: O(n), two passes
+// Space: O(1) extra space, because the output array does not count
+//   (the earlier version with separate prefix and suffix arrays used O(n))
+// Brute force: for each i, multiply all the other elements, O(n^2)
+
 #include<iostream>
 #include<vector>
 using namespace std;
