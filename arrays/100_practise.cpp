@@ -2,34 +2,16 @@
 #include<vector>
 using namespace std;
 
-vector<vector<int>> threeSum(vector<int>& nums) {
-    int n = nums.size();
-    vector<vector<int>> ans;
+int maxProfit(vector<int>& prices) {
+    int maxProfit = 0, bestBuy = prices[0]; 
 
-    sort(nums.begin(), nums.end());
-
-    for (int i=0; i<n; i++) {
-
-        if(i > 0 && nums[i] == nums[i-1]) continue;
-
-        int j=i+1;
-        int k=n-1;
-
-        while(j<k) {
-            int sum = nums[i] + nums[j] + nums[k];
-
-            if(sum < 0){
-                j++;
-            }else if(sum > 0){
-                k--;
-            }else {
-                ans.push_back({nums[i], nums[j], nums[j]});
-                j++; k--;
-            }
-
-            while (j < k && nums[j] == nums[j-1]) j++;
+    for (int i = 0; i < prices.size(); i++) {
+        if (prices[i] < bestBuy) {
+            maxProfit = max(maxProfit, prices[i] - bestBuy);
         }
+
+        bestBuy = min(bestBuy, prices[i]);
     }
 
-    return ans;
+    return maxProfit;
 }
