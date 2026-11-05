@@ -2,21 +2,31 @@
 #include<vector>
 using namespace std;
 
-int findDuplicate(vector<int>& arr) {
-    int slow = arr[0], fast = arr[0];
+vector<vector<int>> threeSum(vector<int>& nums) {
+    int n = nums.size();
+    vector<vector<int>> ans;
 
-    do {
-        slow = arr[slow];
-        fast = arr[arr[fast]];
-    } while (slow != fast);
+    sort(nums.begin(), nums.end());
 
-    slow = arr[0];
+    for (int i=0; i<n ; i++){
+        if(i > 0 && nums[i] == nums[i-1]) continue;
+        int j=i+1;
+        int k= n-1;
 
-    while(slow != fast) {
-        slow = arr[slow];
-        fast = arr[fast];
+        while(j<k) {
+            int sum = nums[i] + nums[j] + nums[k];
+            if(sum < 0) {
+                j++;
+            } else if (sum > 0) {
+                k--;
+            } else {
+                ans.push_back({nums[i], nums[j], nums[k]});
+                j++, k--;
+
+                while(j>k && nums[j] == nums[j-1]) j++;
+            }
+        }
     }
 
-    return slow;
-
+    return ans;
 }
