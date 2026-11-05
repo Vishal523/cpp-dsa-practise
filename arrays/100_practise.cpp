@@ -2,16 +2,21 @@
 #include<vector>
 using namespace std;
 
-int maxProfit(vector<int>& prices) {
-    int maxProfit = 0, bestBuy = prices[0]; 
+int findDuplicate(vector<int>& arr) {
+    int slow = arr[0], fast = arr[0];
 
-    for (int i = 0; i < prices.size(); i++) {
-        if (prices[i] < bestBuy) {
-            maxProfit = max(maxProfit, prices[i] - bestBuy);
-        }
+    do {
+        slow = arr[slow];
+        fast = arr[arr[fast]];
+    } while (slow != fast);
 
-        bestBuy = min(bestBuy, prices[i]);
+    slow = arr[0];
+
+    while(slow != fast) {
+        slow = arr[slow];
+        fast = arr[fast];
     }
 
-    return maxProfit;
+    return slow;
+
 }
