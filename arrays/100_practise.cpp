@@ -2,19 +2,20 @@
 #include<vector>
 using namespace std;
 
-int pealIndexInMountainArray(vector<int>& A) {
-    int st = 1, end = A.size()-1;
+int findDuplicate(vector<int>& arr) {
+    int slow = arr[0], fast = arr[0];
 
-    while(st <= end) {
-        int mid = st + (end - st) / 2;
-        if (A[mid-1] < A[mid] && A[mid] > A[mid + 1]) {
-            return mid;
-        } else if (A[mid-1] < A[mid]) {
-            st = mid + 1;
-        } else {
-            end = mid - 1;
-        }
+    do{
+        slow = arr[slow];
+        fast = arr[arr[fast]];
+    } while (slow != fast);
 
-        return -1;
+    slow = arr[0];
+
+    while(slow != fast) {
+        slow = arr[slow];
+        fast = arr[fast];
     }
+
+    return slow;
 }
