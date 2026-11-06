@@ -1,24 +1,19 @@
-#include <iostream>
-#include <vector>
-#include <unordered_map>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-vector<int> twoSum(vector<int>& arr, int tar) {
-    unordered_map<int, int> m;
-    vector<int> ans;
+int singleNumber(vector<int>& nums) {
+    int ans = 0;
 
-    for (int i=0; i < arr.size(); i++) {
-        int first = arr[i];
-        int sec = tar - first;
-
-        if (m.find(sec) != m.end()) {
-            ans.push_back(i);
-            ans.push_back(m[sec]);
-            break;
-        }
-
-        m[first] = i;
+    for (int val : nums) {
+        ans ^= val;
     }
 
     return ans;
+}
+
+int main() {
+    vector<int> nums = {1,2,1,2,3};
+    cout << "single number in the array is = " << singleNumber(nums) << endl;
+    return 0;
 }
