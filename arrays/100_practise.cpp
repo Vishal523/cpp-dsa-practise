@@ -17,5 +17,5 @@ int findDuplicate(vector<int>& arr) {
         fast = arr[fast];
     }
 
-    return slow;
+    return fast;
 }
