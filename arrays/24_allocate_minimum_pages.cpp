@@ -14,7 +14,7 @@
 // Time: O(n * log(sum)), where isValid() is O(n) and binary search runs log(sum) times
 // Space: O(1) extra
 // Brute force: try every value from max(arr) to sum as the limit and check each one
-//              with isValid(), O(n * sum)
+//              with isValid(), O(n * sum).
 
 
 #include<iostream>
