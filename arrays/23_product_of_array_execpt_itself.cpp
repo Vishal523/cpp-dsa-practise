@@ -16,7 +16,7 @@
 // Time: O(n), two passes
 // Space: O(1) extra space, because the output array does not count
 //   (the earlier version with separate prefix and suffix arrays used O(n))
-// Brute force: for each i, multiply all the other elements, O(n^2)
+// Brute force: for each i, multiply all the other elements, O(n^2).
 
 #include<iostream>
 #include<vector>
