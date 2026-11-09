@@ -13,4 +13,4 @@ arrays/06_subarray_sum
 
 # ignore compiled executables (files without an extension) in arrays/
 arrays/*
-!arrays/*.cpp
+!arrays/*.cppstrings/01_create_a_string
