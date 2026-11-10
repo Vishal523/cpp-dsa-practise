@@ -2,16 +2,20 @@
 #include<vector>
 using namespace std;
 
-int maxProfit(vector<int>& prices) {
-    int maxProfit = 0, bestBuy = prices[0];
+int peakIndexValueInMountainArray(vector<int>& A) {
+    int st = 1, end = A.size()-1;
 
-    for (int i=0; i<prices.size(); i++) {
-        if(prices[i] > bestBuy ) {
-            maxProfit = max(maxProfit, prices[i]-bestBuy);
+    while(st <= end) {
+        int mid = st + (end - st) / 2;
+
+        if(A[mid-1] < A[mid] && A[mid+1] < A[mid]) {
+            return mid;
+        } else if (A[mid-1] < A[mid]) {
+            st = mid + 1;
+        } else {
+            end = mid - 1;
         }
-
-        bestBuy = min(bestBuy, prices[i]);
     }
 
-    return maxProfit;
+    return -1;
 }
