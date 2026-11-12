@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int peakIndexValueInMountainArray(vector<int>& A) {
+int peakIndexValueMountainArray(vector<int>& A) {
     int st = 1, end = A.size()-1;
 
     while(st <= end) {
