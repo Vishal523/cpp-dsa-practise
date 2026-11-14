@@ -8,13 +8,13 @@ int findDuplicate(vector<int>& arr) {
     do {
         slow = arr[slow];
         fast = arr[arr[fast]];
-    } while (slow != fast);
+    } while(slow != fast);
 
     slow = arr[0];
 
     while (slow != fast) {
         slow = arr[slow];
-        fast = arr[fast];
+        fast = arr[arr[fast]];
     }
 
     return slow;
