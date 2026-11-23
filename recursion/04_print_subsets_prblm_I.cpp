@@ -28,7 +28,7 @@
 #include<vector>
 using namespace std;
 
-int getAllSubsets(vector<int>& nums, vector<int> &ans, int i, vector<vector<int>> allSubsets) {
+void getAllSubsets(vector<int>& nums, vector<int>& ans, int i, vector<vector<int>>& allSubsets) {
     if (i == nums.size()) {
         allSubsets.push_back({ans});
         return;
@@ -51,4 +51,19 @@ vector<vector<int>> subsets(vector<int>& nums) {
     getAllSubsets(nums, ans, 0, allSubsets);
 
     return allSubsets;
+}
+
+int main() {
+    vector<int> nums = {1, 2, 3};
+
+    vector<vector<int>> result = subsets(nums);
+
+    for (auto& s : result) {
+        for (int x : s) {
+            cout << x << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
