@@ -27,5 +27,5 @@ int sum (int n) {
 }
 
 int main() {
-    cout << "sum = " << sum(7) << endl;
+    cout << "sum = " << sum(5) << endl;
 }
