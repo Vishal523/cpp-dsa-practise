@@ -52,7 +52,7 @@ void printSubsets(vector<int> &arr, vector<int> &ans, int i) {
 }
 
     int main() {
-        vector<int> arr = {1,2,3};
+        vector<int> arr = {4,5,6};
         vector<int> ans;
 
         printSubsets(arr, ans, 0);
