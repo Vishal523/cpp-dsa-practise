@@ -11,6 +11,6 @@ int factorial(int n) {
 
 
 int main() {
-    cout << "the factorial for the given number is : " << factorial(1) << endl;
+    cout << "the factorial for the given number is : " << factorial(3) << endl;
     return 0;
 }
