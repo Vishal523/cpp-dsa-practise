@@ -1,17 +1,11 @@
 #include<iostream>
-#include<vector>
+#include<string>
 using namespace std;
 
-int maxProfit(vector<int>& prices) {
-    int maxProfit = 0, bestBuy = prices[0];
-
-    for (int i=0; i<prices[0]; i++) {
-        if (prices[i] > bestBuy) {
-            maxProfit = max(maxProfit, prices[i] - bestBuy);
-        }
-
-        bestBuy = min(bestBuy, prices[i]);
+string removeOccurance (string s, string part) {
+    while (s.length() > 0 && s.find(part) < s.length()) {
+        s.erase(s.find(part), part.length());
     }
 
-    return maxProfit;
+    return s;
 }
